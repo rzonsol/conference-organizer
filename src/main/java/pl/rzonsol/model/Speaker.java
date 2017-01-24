@@ -1,5 +1,6 @@
 package pl.rzonsol.model;
 
+import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 
@@ -14,7 +15,7 @@ public class Speaker extends Participant {
 
 
     @Id
-    private String id;
+    private ObjectId id;
     private String title;
     private String Abstract;
     private Date dateOfSpeech;
@@ -38,12 +39,12 @@ public class Speaker extends Participant {
     public Speaker(){}
 
     @Override
-    public String getId() {
+    public ObjectId getId() {
         return id;
     }
 
     @Override
-    public void setId(String id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 

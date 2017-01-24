@@ -1,5 +1,6 @@
 package pl.rzonsol.model;
 
+import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Reference;
@@ -14,7 +15,7 @@ import java.util.List;
 public class Conference {
 
     @Id
-    private String id;
+    private ObjectId id;
     private String name;
     private String location;
     private Date startDate;
@@ -36,11 +37,11 @@ public class Conference {
     public Conference() {
     }
 
-    public String getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 
@@ -95,7 +96,7 @@ public class Conference {
     @Override
     public String toString() {
         return "Conference{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", location='" + location + '\'' +
                 ", startDate=" + startDate +
