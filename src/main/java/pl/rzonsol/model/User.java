@@ -3,6 +3,9 @@ package pl.rzonsol.model;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
+import org.mongodb.morphia.annotations.Reference;
+
+import java.util.List;
 
 /**
  * Created by rzonsol on 24.01.2017.
@@ -15,12 +18,17 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
+@Reference
+    private List<Role> rolses;
 
-    public User(String login, String firstName, String lastName, String email) {
+
+
+    public User(String login, String firstName, String lastName, String email, List<Role> roles) {
         this.login = login;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.rolses = roles;
     }
 
     public User() {
@@ -66,14 +74,23 @@ public class User {
         this.email = email;
     }
 
+    public List<Role> getRolses() {
+        return rolses;
+    }
+
+    public void setRolses(List<Role> rolses) {
+        this.rolses = rolses;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", login='" + login + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
+                ", rolses=" + rolses +
                 '}';
     }
 }
