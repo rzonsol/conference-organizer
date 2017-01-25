@@ -17,21 +17,21 @@ public class Speaker extends Participant {
     @Id
     private ObjectId id;
     private String title;
-    private String Abstract;
+    private String talkAbstract;
     private Date dateOfSpeech;
     private Time timeOfSpeech;
 
     public Speaker(String firstName, String lastName, String email, Conference conference, String affiliation, Date arriveDate, Date departureDate, boolean confirmed, boolean paid, String title, String anAbstract, Date dateOfSpeech, Time timeOfSpeech) {
         super(firstName, lastName, email, conference, affiliation, arriveDate, departureDate, confirmed, paid);
         this.title = title;
-        Abstract = anAbstract;
+        talkAbstract = anAbstract;
         this.dateOfSpeech = dateOfSpeech;
         this.timeOfSpeech = timeOfSpeech;
     }
 
     public Speaker(String title, String anAbstract, Date dateOfSpeech, Time timeOfSpeech) {
         this.title = title;
-        Abstract = anAbstract;
+        talkAbstract = anAbstract;
         this.dateOfSpeech = dateOfSpeech;
         this.timeOfSpeech = timeOfSpeech;
     }
@@ -56,12 +56,12 @@ public class Speaker extends Participant {
         this.title = title;
     }
 
-    public String getAbstract() {
-        return Abstract;
+    public String getTalkAbstract() {
+        return talkAbstract;
     }
 
-    public void setAbstract(String anAbstract) {
-        Abstract = anAbstract;
+    public void setTalkAbstract(String talkAbstract) {
+        this.talkAbstract = talkAbstract;
     }
 
     public Date getDateOfSpeech() {
@@ -84,7 +84,7 @@ public class Speaker extends Participant {
     public String toString() {
         return "Speaker{" +
                 "title='" + title + '\'' +
-                ", Abstract='" + Abstract + '\'' +
+                ", talkAbstract='" + talkAbstract + '\'' +
                 ", dateOfSpeech=" + dateOfSpeech +
                 ", timeOfSpeech=" + timeOfSpeech +
                 "} " + super.toString();

@@ -28,6 +28,9 @@ public class ConferenceSession {
         this.listOfSpeakers = listOfSpeakers;
     }
 
+    public ConferenceSession() {
+    }
+
     public ObjectId getId() {
         return id;
     }

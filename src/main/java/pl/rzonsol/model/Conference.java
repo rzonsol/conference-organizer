@@ -23,7 +23,7 @@ public class Conference {
     @Reference
     private List<Participant> organizers;
     @Reference
-    private List<User> edytors;
+    private List<User> editors;
 
     public Conference(String name, String location, Date startDate, Date endDate, List<Participant> organizers, List<User> edytors) {
         this.name = name;
@@ -31,7 +31,7 @@ public class Conference {
         this.startDate = startDate;
         this.endDate = endDate;
         this.organizers = organizers;
-        this.edytors = edytors;
+        this.editors = edytors;
     }
 
     public Conference() {
@@ -85,12 +85,12 @@ public class Conference {
         this.organizers = organizers;
     }
 
-    public List<User> getEdytors() {
-        return edytors;
+    public List<User> getEditors() {
+        return editors;
     }
 
-    public void setEdytors(List<User> edytors) {
-        this.edytors = edytors;
+    public void setEditors(List<User> editors) {
+        this.editors = editors;
     }
 
     @Override
@@ -102,7 +102,7 @@ public class Conference {
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", organizers=" + organizers +
-                ", edytors=" + edytors +
+                ", editors=" + editors +
                 '}';
     }
 }

@@ -3,6 +3,7 @@ package pl.rzonsol.dao;
 import org.bson.types.ObjectId;
 import pl.rzonsol.model.Conference;
 import pl.rzonsol.model.Participant;
+import pl.rzonsol.model.Speaker;
 import pl.rzonsol.model.User;
 
 import java.util.List;
@@ -26,6 +27,10 @@ public interface ConferenceDao {
 
     void deleteConference(ObjectId conferenceId);
 
-    List<Conference> getEdytorsConference(ObjectId edytorId);
+    List<Conference> getConferencesByEdytor(ObjectId editorId);
+
+    List<User> getConferenceParticipants(ObjectId conferenceId);
+
+    List<Speaker> getConferenceSpeakers(ObjectId conferenceId);
 
 }
