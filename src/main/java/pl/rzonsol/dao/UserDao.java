@@ -1,6 +1,7 @@
 package pl.rzonsol.dao;
 
 import org.bson.types.ObjectId;
+import org.mongodb.morphia.dao.DAO;
 import pl.rzonsol.model.User;
 
 import java.util.List;
@@ -9,11 +10,9 @@ import java.util.List;
  * Created by rzonsol on 24.01.2017.
  */
 
-public interface UserDao {
+public interface UserDao extends DAO<User, ObjectId> {
 
     List<User> users();
-
-    void addUser(User user);
 
     User findUserById(ObjectId id);
 
